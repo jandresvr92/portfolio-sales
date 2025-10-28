@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mónica Pérez - Sogercol</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rojo-sogercol: #D31117;
+            --rojo-oscuro: #A10D12;
+            --blanco: #FFFFFF;
+            --gris-claro: #F8F9FA;
+            --gris-texto: #2C3E50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--gris-texto);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--rojo-sogercol) 0%, var(--rojo-oscuro) 100%);
+            color: var(--blanco);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            background: var(--blanco);
+            padding: 1rem;
+            border-radius: 12px;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-logo {
+            height: 54px;
+            width: auto;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .cargo {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Contacto rápido */
+        .contacto-rapido {
+            background: var(--blanco);
+            padding: 1.5rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-contacto {
+            background: var(--rojo-sogercol);
+            color: var(--blanco);
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(211, 17, 23, 0.3);
+        }
+
+        .btn-contacto:hover {
+            background: var(--rojo-oscuro);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(211, 17, 23, 0.4);
+        }
+
+        .btn-contacto i {
+            font-size: 1.5rem;
+        }
+
+        .btn-contacto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Secciones */
+        .seccion {
+            padding: 2rem 1rem;
+        }
+
+        .seccion:nth-child(even) {
+            background: var(--gris-claro);
+        }
+
+        .seccion h2 {
+            color: var(--rojo-sogercol);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--rojo-sogercol);
+        }
+
+        /* Servicios */
+        .servicios-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .servicio-card {
+            background: var(--blanco);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--rojo-sogercol);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .servicio-card i {
+            color: var(--rojo-sogercol);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .servicio-card h3 {
+            color: var(--gris-texto);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .servicio-card p {
+            color: #7F8C8D;
+            font-size: 0.9rem;
+        }
+
+        /* Información de contacto */
+        .info-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--blanco);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item i {
+            color: var(--rojo-sogercol);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .info-item a {
+            color: var(--gris-texto);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: var(--rojo-sogercol);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gris-texto);
+            color: var(--blanco);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .footer a {
+            color: var(--rojo-sogercol);
+            text-decoration: none;
+        }
+
+        /* Responsive para tablets y desktop */
+        @media (min-width: 768px) {
+            .header {
+                padding: 3rem 2rem;
+            }
+
+            .brand {
+                max-width: 350px;
+                padding: 1.5rem;
+            }
+
+            .brand-logo {
+                height: 70px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contacto-rapido {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .seccion {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 3rem 2rem;
+            }
+
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .servicios-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="brand">
+            <a href="https://www.sogercol.com" target="_blank" rel="noopener">
+                <img src="./assets/img/logo.png" alt="Sogercol - Seguridad Privada" class="brand-logo" />
+            </a>
+        </div>
+        <h1>Mónica Pérez R.</h1>
+        <p class="cargo">Asesora Comercial</p>
+    </header>
+
+    <!-- Contacto Rápido -->
+    <div class="contacto-rapido">
+        <a href="https://wa.me/573132346540" class="btn-contacto" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="mailto:asesorcomercial@sogercol.com" class="btn-contacto">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+    </div>
+
+    <!-- Sobre Mí -->
+    <section class="seccion">
+        <h2><i class="fas fa-user"></i> Sobre Mí</h2>
+        <p>Como Asesora Comercial en Sogercol, me especializo en brindar soluciones integrales de seguridad adaptadas a
+            las necesidades específicas de cada cliente. Mi compromiso es proteger lo que más valoras con servicios
+            profesionales y tecnología de vanguardia.</p>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion">
+        <h2><i class="fas fa-shield-alt"></i> Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fas fa-video"></i>
+                <h3>Vigilancia y Monitoreo</h3>
+                <p>Sistemas de videovigilancia 24/7 con tecnología de última generación.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Seguridad Física</h3>
+                <p>Personal capacitado para la protección de instalaciones y eventos.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-bell"></i>
+                <h3>Alarmas y Sensores</h3>
+                <p>Instalación y monitoreo de sistemas de alarma inteligentes.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-lock"></i>
+                <h3>Control de Acceso</h3>
+                <p>Sistemas biométricos y tarjetas de acceso para máxima seguridad.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Gestión de Riesgos</h3>
+                <p>Análisis y evaluación de vulnerabilidades en su organización.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-headset"></i>
+                <h3>Asesoría Personalizada</h3>
+                <p>Consultoría especializada en seguridad integral empresarial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="seccion">
+        <h2><i class="fas fa-address-card"></i> Información de Contacto</h2>
+        <div class="info-contacto">
+            <div class="info-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                    <strong>Teléfono:</strong><br>
+                    <a href="tel:+57 3132346540">+57 313 234 65 40</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email:</strong><br>
+                    <a href="mailto:mperez@segurcol.com">mperez@segurcol.com</a>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <strong>Sitio Web:</strong><br>
+                    <a href="www.segurcol.com" target="_blank">www.sogercol.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 <a href="www.segurcol.com">Sogercol</a> - Todos los derechos reservados</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Soluciones integrales en seguridad privada</p>
+    </footer>
+</body>
+
+</html>
